@@ -1,0 +1,28 @@
+.app {
+  background: #D1E7B3
+}
+
+.header_layout {
+  display: grid;
+  grid-template-columns: 140px auto 140px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;   
+}
+
+.hat {
+  width: 140px;
+  justify-self: end;
+}
+
+h1 {   
+  margin: 0;
+  background: #D1E7B3;
+  font-family: "Times New Roman", Times, serif;
+  color: #36454F;
+  text-align: center;
+}
+
+.cookie {
+  font-size: 3rem;    
+}
