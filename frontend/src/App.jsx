@@ -107,7 +107,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/recipes/one-recipe" element={<OneRecipe />} />
+        <Route path="/recipes/one-recipe/:id" element={<OneRecipe />} />
       </Routes>
     </BrowserRouter>
   );

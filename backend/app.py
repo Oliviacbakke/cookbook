@@ -12,24 +12,17 @@ def get_db():
 
 def create_database():
     connection = sqlite3.connect("cookbook.db")
-
     connection.execute("""
         CREATE TABLE IF NOT EXISTS recipes (
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
-            instructions TEXT
-        )
-    """)
-
+            instructions TEXT)""")
     connection.execute("""
         CREATE TABLE IF NOT EXISTS ingredients (
             id INTEGER PRIMARY KEY,
             recipe_id INTEGER NOT NULL,
             ingredient TEXT NOT NULL,
-            FOREIGN KEY (recipe_id) REFERENCES recipes(id)
-        )
-    """)
-
+            FOREIGN KEY (recipe_id) REFERENCES recipes(id))""")
     connection.commit()
     connection.close()
 
@@ -60,32 +53,46 @@ def add_recipe():
 @app.route("/recipes", methods=["GET"])
 def get_recipes():
     connection = get_db()
-
     recipes = connection.execute("""
         SELECT * FROM recipes
     """).fetchall()
-
     result = []
-
     for recipe in recipes:
         ingredients = connection.execute("""
             SELECT ingredient
             FROM ingredients
             WHERE recipe_id = ?
         """, (recipe["id"],)).fetchall()
-
         result.append({
             "id": recipe["id"],
             "name": recipe["name"],
             "instructions": recipe["instructions"],
-            "ingredients": [
-                row["ingredient"] for row in ingredients
-            ]
-        })
-
+            "ingredients": [row["ingredient"] for row in ingredients]})
     connection.close()
-
     return result
+
+@app.route("/recipes/<int:recipe_id>", methods=["GET"])
+def get_one_recipe(recipe_id):
+    connection = get_db()
+    recipe = connection.execute("""
+        SELECT * FROM recipes
+        WHERE id = ?
+    """, (recipe_id,)).fetchone()
+    if recipe is None:
+        connection.close()
+        return {"error": "Recipe not found"}, 404
+    ingredients = connection.execute("""
+        SELECT ingredient
+        FROM ingredients
+        WHERE recipe_id = ?
+    """, (recipe_id,)).fetchall()
+    connection.close()
+    return {
+        "id": recipe["id"],
+        "name": recipe["name"],
+        "instructions": recipe["instructions"],
+        "ingredients": [
+            ingredient["ingredient"] for ingredient in ingredients]}
 
 @app.route("/")
 def home():
