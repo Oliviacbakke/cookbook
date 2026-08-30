@@ -18,24 +18,27 @@ function OneRecipe() {
   }
 
   return (
-    <div>
-      <h1>{recipe.name} 🍽️</h1>
+    <div className="recipe_page">
+      <h1>{recipe.name}</h1>
 
-      <h2>Ingredients 🥣</h2>
+      <h2>Ingredients</h2>
 
-      <ul>
+      <div className="ingredients_list">
         {recipe.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
+        <div className="ingredient" key={index}>
+            {ingredient}
+        </div>))}
+      </div>
 
-      <h2>Instructions 📝</h2>
+      <h2>Instructions</h2>
 
-      <p>{recipe.instructions}</p>
+      <p className="text">{recipe.instructions}</p>
 
       <Link to="/recipes">
         <button>Back to Recipes</button>
       </Link>
+
+      <div className="bottom"></div>
     </div>
   );
 }

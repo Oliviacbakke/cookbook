@@ -1,3 +1,31 @@
-.h1 {
-    padding-top: 30px
+.recipe_page {
+  padding: 60px;
+  font-family: "Times New Roman", serif;
+  background-color: #D1E7B3;
+  color: #36454F;
+}
+
+h1 {
+    padding-bottom: 60px;
+}
+
+h2 {
+    font-size: 30px;
+    padding: 15px; 
+    text-decoration: underline;
+    font-family: "Times New Roman", serif;
+    color: #36454F;
+}
+
+.text {
+    padding-bottom: 30px; 
+}
+
+button {
+    font-family: "Times New Roman", serif;
+    color: #36454F;
+}
+
+.bottom {
+    padding-bottom: 300px; 
 }
