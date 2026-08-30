@@ -1,5 +1,16 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
 .app {
-  background: #D1E7B3
+  background: #D1E7B3;
+  min-height: 100vh;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .header_layout {
@@ -23,6 +34,95 @@ h1 {
   text-align: center;
 }
 
+.emoji_container {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+  font-size: 40px; 
+}
+
+.emoji_row {
+  display: flex;
+  gap: 50px;     
+  padding-bottom: 40px;
+  padding-right: 50px; 
+}
+
+.emoji_row span {
+  margin-right: 20px; 
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.below {
+  padding-bottom: 30px; 
+}
+
+.line {
+  padding-bottom: 50px; 
+}
+
+.daily_recipe {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px; 
+  color: #36454F;
+  padding-bottom: 60px; 
+}
+
 .cookie {
   font-size: 3rem;    
+}
+
+.button_layout {
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+}
+
+.button_layout > * {
+  flex: 2;
+}
+
+.recipe_button {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  color: black;
+
+  background-color: #ede2e5;
+  border: 3px outset rgb(222, 167, 206);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
+.middle {
+  flex: 1;
+}
+
+.bottom {
+  padding-bottom: 200px;
+}
+
+.substitutes {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px; 
+  color: #36454F; 
+  border: groove rgb(222, 167, 206) 10px; 
+  padding-top: 30px; 
+  padding-bottom: 30px; 
 }
