@@ -5,6 +5,7 @@ import hat from "./hat.jpg";
 import Recipes from "./pages/Recipes";
 import Search from "./pages/Search";
 import OneRecipe from "./pages/OneRecipe";
+import EditRecipes from "./pages/EditRecipes";
 
 function Home() {
   const [count, setCount] = useState(0)
@@ -87,7 +88,7 @@ function Home() {
 
         <div className="middle"></div>
 
-        <Link to="/edit" className="recipe_button">
+        <Link to="/edit-recipes" className="recipe_button">
           Edit Recipes
         </Link>
       </div>
@@ -106,8 +107,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/recipes/one-recipe/:id" element={<OneRecipe />} />
+        <Route path="/edit-recipes" element={<EditRecipes />} />
+        <Route
+          path="/recipes/one-recipe/:id"
+          element={<OneRecipe />}
+        />
       </Routes>
     </BrowserRouter>
   );

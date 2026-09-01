@@ -13,8 +13,22 @@
   flex: 1;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  font-size: 30px; 
   color: #36454F;
   padding-top: 40px; 
   padding-bottom: 40px; 
 }
+
+button {
+    padding: 5px; 
+    font-size: 20px; 
+}
+
+.recipe-form {
+    font-size: 20px; 
+    
+}
+
+textarea {
+    font-size: 20px; 
+}
+

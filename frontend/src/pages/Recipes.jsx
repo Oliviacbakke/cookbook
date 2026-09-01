@@ -11,6 +11,8 @@ function Recipes() {
 
   const [recipes, setRecipes] = useState([]);
 
+  const [category, setCategory] = useState("Main");
+
   useEffect(() => {
   fetch("http://127.0.0.1:5000/recipes")
     .then((response) => response.json())
@@ -39,6 +41,7 @@ function Recipes() {
     const recipe = {
       name: recipeName,
       instructions: instructions,
+      category: category,
       ingredients: ingredients.filter(
         (ingredient) => ingredient.trim() !== ""
       )
@@ -69,77 +72,42 @@ function Recipes() {
       <h1>All Recipes 🍰</h1> </div> <br></br>
 
       <div className="column_layout">
-        <div className="mains">Mains</div>
-
-        <div className="sides">Sides</div>
-
-        <div className="desserts">Desserts</div>
-      </div>
       
-      <div className="recipe_list">
-        {recipes.map((recipe) => (
-            <Link
-            key={recipe.id}
-            to={`/recipes/one-recipe/${recipe.id}`}
-            >
-            <button>{recipe.name}</button>
-            </Link>
-        ))}
+        <div className="mains">
+            <h2>Mains</h2>
+            {recipes
+                .filter((recipe) => recipe.category === "Main")
+                .map((recipe) => (
+                <Link
+                    key={recipe.id}
+                    to={`/recipes/one-recipe/${recipe.id}`}>
+                    <button>{recipe.name}</button> <br></br> <br></br>
+                </Link>))}
         </div>
 
-      <br /><br />
+        <div className="sides">
+            <h2>Sides</h2>
+            {recipes
+                .filter((recipe) => recipe.category === "Side")
+                .map((recipe) => (
+                <Link
+                    key={recipe.id}
+                    to={`/recipes/one-recipe/${recipe.id}`}>
+                    <button>{recipe.name}</button> <br></br>
+                </Link>))}
+        </div>
 
-      <h2>Add a Recipe</h2>
-
-      <div className="recipe_form">
-
-        <label>
-          Recipe Name:
-        </label>
-
-        <input
-          type="text"
-          value={recipeName}
-          onChange={(e) => setRecipeName(e.target.value)}
-        />
-
-        <h3>Ingredients</h3>
-
-        {ingredients.map((ingredient, index) => (
-          <div key={index}>
-            <input
-              type="text"
-              value={ingredient}
-              placeholder="Ingredient"
-              onChange={(e) =>
-                updateIngredient(index, e.target.value)
-              }
-            />
-
-            <button onClick={() => removeIngredient(index)}>
-              X
-            </button>
-          </div>
-        ))}
-
-        <button onClick={addIngredient}>
-          + Add Ingredient
-        </button>
-
-        <h3>Instructions</h3>
-
-        <textarea
-          value={instructions}
-          onChange={(e) => setInstructions(e.target.value)}
-        />
-
-        <br />
-        <br />
-
-        <button onClick={saveRecipe}>
-          Save Recipe
-        </button>
-
+        <div className="desserts">
+            <h2>Desserts</h2>
+            {recipes
+                .filter((recipe) => recipe.category === "Dessert")
+                .map((recipe) => (
+                <Link
+                    key={recipe.id}
+                    to={`/recipes/one-recipe/${recipe.id}`}>
+                    <button>{recipe.name}</button> <br></br>
+                </Link>))}
+        </div>
       </div>
 
       <Link to="/">

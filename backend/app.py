@@ -16,7 +16,8 @@ def create_database():
         CREATE TABLE IF NOT EXISTS recipes (
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
-            instructions TEXT)""")
+            instructions TEXT
+            category TEXT NOT NULL)""")
     connection.execute("""
         CREATE TABLE IF NOT EXISTS ingredients (
             id INTEGER PRIMARY KEY,
@@ -30,13 +31,14 @@ def create_database():
 def add_recipe():
     data = request.get_json()
     name = data["name"]
+    category = data["category"]
     instructions = data["instructions"]
     ingredients = data["ingredients"]
     connection = get_db()
     cursor = connection.execute("""
-        INSERT INTO recipes (name, instructions)
-        VALUES (?, ?)
-    """, (name, instructions))
+        INSERT INTO recipes (name, instructions, category)
+        VALUES (?, ?, ?)
+    """, (name, instructions, category))
     recipe_id = cursor.lastrowid
     for ingredient in ingredients:
         connection.execute("""
@@ -66,6 +68,7 @@ def get_recipes():
         result.append({
             "id": recipe["id"],
             "name": recipe["name"],
+            "category": recipe["category"],
             "instructions": recipe["instructions"],
             "ingredients": [row["ingredient"] for row in ingredients]})
     connection.close()
@@ -90,6 +93,7 @@ def get_one_recipe(recipe_id):
     return {
         "id": recipe["id"],
         "name": recipe["name"],
+        "category": recipe["category"],
         "instructions": recipe["instructions"],
         "ingredients": [
             ingredient["ingredient"] for ingredient in ingredients]}
