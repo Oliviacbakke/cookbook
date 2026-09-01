@@ -102,7 +102,7 @@ function AddRecipe() {
       <br />
 
       <Link to="/">
-        <button>Back to Home</button>
+        <button >Back to Home</button>
       </Link>
     </div>);}
 
