@@ -8,6 +8,7 @@ function AddRecipe() {
   const [category, setCategory] = useState("Main");
   const [ingredients, setIngredients] = useState([""]);
   const [recipes, setRecipes] = useState([]);
+  const [editingId, setEditingId] = useState(null);
 
   useEffect(() => {
   fetch("http://127.0.0.1:5000/recipes")
@@ -34,16 +35,26 @@ function AddRecipe() {
         category: category,
         ingredients: ingredients.filter(
         (ingredient) => ingredient.trim() !== "")};
-    const response = await fetch("http://127.0.0.1:5000/recipes", {
+    let response;
+    if (editingId !== null) {
+        response = await fetch(
+        `http://127.0.0.1:5000/recipes/${editingId}`, {
+            method: "PUT",
+            headers: {
+            "Content-Type": "application/json"},
+            body: JSON.stringify(recipe)});
+    } else {
+        response = await fetch("http://127.0.0.1:5000/recipes", {
         method: "POST",
         headers: {
-        "Content-Type": "application/json"},
-        body: JSON.stringify(recipe)});
+            "Content-Type": "application/json"},
+        body: JSON.stringify(recipe)});}
     if (response.ok) {
         setRecipeName("");
         setInstructions("");
         setCategory("Main");
         setIngredients([""]);
+        setEditingId(null);
         fetch("http://127.0.0.1:5000/recipes")
         .then((response) => response.json())
         .then((data) => setRecipes(data));}}
@@ -58,6 +69,13 @@ function AddRecipe() {
     if (response.ok) {
         setRecipes((currentRecipes) =>
         currentRecipes.filter((recipe) => recipe.id !== id));}}
+
+  function startEditing(recipe) {
+    setEditingId(recipe.id);
+    setRecipeName(recipe.name);
+    setInstructions(recipe.instructions);
+    setCategory(recipe.category);
+    setIngredients(recipe.ingredients);}
 
   return (
     <div>
@@ -112,8 +130,8 @@ function AddRecipe() {
         <br />
         <br />
 
-        <button onClick={saveRecipe}>
-          Save Recipe
+       <button onClick={saveRecipe}>
+        {editingId !== null ? "Update Recipe" : "Save Recipe"}
         </button>
       </div>
 
@@ -126,8 +144,11 @@ function AddRecipe() {
     {recipes.map((recipe) => (
         <div className="delete_recipe" key={recipe.id}>
             <span>{recipe.name}</span>
+            <button onClick={() => startEditing(recipe)}>
+            Edit
+            </button>
             <button onClick={() => deleteRecipe(recipe.id)}>
-                Delete 🗑️
+            Delete 🗑️
             </button>
         </div>))}
     </div>

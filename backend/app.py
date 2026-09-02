@@ -113,6 +113,32 @@ def delete_recipe(recipe_id):
     connection.close()
     return {"message": "Recipe deleted successfully"}
 
+@app.route("/recipes/<int:recipe_id>", methods=["PUT"])
+def update_recipe(recipe_id):
+    data = request.get_json()
+    name = data["name"]
+    category = data["category"]
+    instructions = data["instructions"]
+    ingredients = data["ingredients"]
+    connection = get_db()
+    connection.execute("""
+        UPDATE recipes
+        SET name = ?, category = ?, instructions = ?
+        WHERE id = ?
+    """, (name, category, instructions, recipe_id))
+    connection.execute("""
+        DELETE FROM ingredients
+        WHERE recipe_id = ?
+    """, (recipe_id,))
+    for ingredient in ingredients:
+        connection.execute("""
+            INSERT INTO ingredients (recipe_id, ingredient)
+            VALUES (?, ?)
+        """, (recipe_id, ingredient))
+    connection.commit()
+    connection.close()
+    return {"message": "Recipe updated successfully"}
+
 @app.route("/")
 def home():
     return {"message": "Flask Working"}
