@@ -98,6 +98,21 @@ def get_one_recipe(recipe_id):
         "ingredients": [
             ingredient["ingredient"] for ingredient in ingredients]}
 
+@app.route("/recipes/<int:recipe_id>", methods=["DELETE"])
+def delete_recipe(recipe_id):
+    connection = get_db()
+    connection.execute("""
+        DELETE FROM ingredients
+        WHERE recipe_id = ?
+    """, (recipe_id,))
+    connection.execute("""
+        DELETE FROM recipes
+        WHERE id = ?
+    """, (recipe_id,))
+    connection.commit()
+    connection.close()
+    return {"message": "Recipe deleted successfully"}
+
 @app.route("/")
 def home():
     return {"message": "Flask Working"}
