@@ -6,6 +6,7 @@ import Recipes from "./pages/Recipes";
 import Search from "./pages/Search";
 import OneRecipe from "./pages/OneRecipe";
 import EditRecipes from "./pages/EditRecipes";
+import SearchRecipes from "./pages/Search";
 
 function Home() {
   const [count, setCount] = useState(0)
@@ -112,6 +113,7 @@ function App() {
           path="/recipes/one-recipe/:id"
           element={<OneRecipe />}
         />
+        <Route path="/search" element={<SearchRecipes />} />
       </Routes>
     </BrowserRouter>
   );

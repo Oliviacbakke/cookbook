@@ -151,7 +151,7 @@ function AddRecipe() {
             Delete 🗑️
             </button>
         </div>))}
-    </div>
+    </div>  <br></br>
 
       <Link to="/">
         <button >Back to Home</button>
