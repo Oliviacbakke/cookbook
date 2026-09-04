@@ -5,56 +5,79 @@ body,
   padding: 0;
   width: 100%;
   min-height: 100%;
+  background-color: #D1E7B3;
+}
+
+body {
+  background-color: #D1E7B3;
 }
 
 .app {
-  background: #D1E7B3;
   min-height: 100vh;
-  font-family: "Times New Roman", Times, serif;
+  background-color: #D1E7B3;
 }
 
-.header_layout {
-  display: grid;
-  grid-template-columns: 140px auto 140px;
+.home_header {
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 30px;   
+  gap: 18px;
+
+  padding-top: 0px;
+  padding-bottom: 10px;
 }
 
 .hat {
-  width: 140px;
-  justify-self: end;
+  width: 200px;
+  height: auto;
 }
 
-h1 {   
+.header_text {
+  padding-top: 70px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header_text h1 {
   margin: 0;
-  background: #D1E7B3;
   font-family: "Times New Roman", Times, serif;
+  font-size: 65px;
   color: #36454F;
-  text-align: center;
+}
+
+.header_text p {
+  margin: 8px 0 0;
+  font-size: 19px;
+}
+
+.cookie {
+  padding-left: 40px; 
+  font-size: 80px;
 }
 
 .emoji_container {
   display: flex;
   width: max-content;
+
+  font-size: 38px;
+
   animation: scroll 25s linear infinite;
-  font-size: 40px; 
+
+  padding-top: 20px;
+  padding-bottom: 35px;
 }
 
 .emoji_row {
   display: flex;
-  gap: 50px;     
-  padding-bottom: 40px;
-  padding-right: 50px; 
-}
-
-.emoji_row span {
-  margin-right: 20px; 
+  gap: 45px;
+  white-space: nowrap;
+  padding-right: 45px;
 }
 
 @keyframes scroll {
   from {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 
   to {
@@ -62,67 +85,80 @@ h1 {
   }
 }
 
-.below {
-  padding-bottom: 30px; 
-}
-
-.line {
-  padding-bottom: 50px; 
-}
-
 .daily_recipe {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px; 
-  color: #36454F;
-  padding-bottom: 60px; 
+max-width: 650px;
+margin: 0 auto 40px;
+padding: 25px;
+background: #F2EEE9;
+border: 2px solid #B76B7D;
+border-radius: 20px;
 }
 
-.cookie {
-  font-size: 3rem;    
+.daily_recipe h2 {
+margin-top: 0;
+font-size: 35px;
 }
 
-.button_layout {
-  display: flex;
-  align-items: center;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 50px;
+.daily_recipe p {
+margin-bottom: 0;
+font-size: 18px;
 }
 
-.button_layout > * {
-  flex: 2;
+.home_navigation {
+max-width: 1000px;
+margin: 0 auto 50px;
+display: flex;
+justify-content: center;
+gap: 25px;
+padding: 0 30px;
 }
 
-.recipe_button {
-  width: 200px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.home_card {
+flex: 1;
+min-height: 220px;
+padding: 25px;
 
-  text-decoration: none;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px;
-  color: black;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 
-  background-color: #ede2e5;
-  border: 3px outset rgb(222, 167, 206);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+background: #F2EEE9;
+border: 2px solid #B76B7D;
+border-radius: 20px;
+
+color: #36454F;
+text-decoration: none; 
 }
 
-.middle {
-  flex: 1;
+.home_card {
+transform: scale(1.04);
+background: #B76B7D;
+color: #F2EEE9;
 }
 
-.bottom {
-  padding-bottom: 200px;
+.card_emoji {
+font-size: 45px;
+}
+
+.home_card h2 {
+margin: 10px 0;
+font-size: 35px;
+color: #F2EEE9;
+text-decoration: none; 
+}
+
+.home_card p {
+margin: 0;
+font-size: 17px;
 }
 
 .substitutes {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px; 
-  color: #36454F; 
-  border: groove rgb(222, 167, 206) 10px; 
-  padding-top: 30px; 
-  padding-bottom: 30px; 
+max-width: 650px;
+margin: 0 auto;
+padding: 25px;
+
+background: #F2EEE9;
+border: 2px solid #B76B7D;
+border-radius: 20px;
 }

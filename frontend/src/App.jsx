@@ -18,89 +18,85 @@ function Home() {
   }, []);
 
   return (
-    <div className="app">
+    <div className="home_page">
 
-      <div className="header_layout">
-        <img src={hat} alt="Chef's Hat" className="hat" />
-        <h1>Olivia's Cookbook</h1>
-        <span className="cookie">🍪</span>
-      </div>
+<div className="home_header"> <img src={hat} alt="Chef's Hat" className="hat" />
 
-      <div className="below">
-        The ultimate cookbook for all of my cooking and baking needs
-      </div>
+<div className="header_text">
+  <h1>Olivia's Cookbook</h1>
+  <p>
+    The ultimate cookbook for all of my cooking and baking needs
+  </p>
+</div>
 
-      <div className="emoji_container">
-        <div className="emoji_row">
-          <span>🧁</span> 
-          <span>🍪</span> 
-          <span>🥖</span> 
-          <span>🎂</span> 
-          <span>🍩</span> 
-          <span>🍰</span> 
-          <span>🥧</span> 
-          <span>🍪</span> 
-          <span>🥐</span> 
-          <span>🥖</span> 
-          <span>🎂</span> 
-          <span>🍩</span> 
-          <span>🍰</span> 
-          <span>🥧</span>
-        </div>
+<span className="cookie">🍪</span>
 
-        <div className="emoji_row">
-          <span>🧁</span> 
-          <span>🍪</span> 
-          <span>🥖</span> 
-          <span>🎂</span> 
-          <span>🍩</span> 
-          <span>🍰</span> 
-          <span>🥧</span> 
-          <span>🍪</span> 
-          <span>🥐</span> 
-          <span>🥖</span> 
-          <span>🎂</span> 
-          <span>🍩</span> 
-          <span>🍰</span> 
-          <span>🥧</span>
-        </div>
-      </div>
+</div>
 
-      <div className="daily_recipe">
-        Recipe of the Day: [Placeholder]
-      </div>
+<div className="emoji_container">
 
-      <div className="button_layout">
-        <Link to="/recipes" className="recipe_button">
-          All Recipes
-        </Link>
+<div className="emoji_row">
+  <span>🧁</span>
+  <span>🍪</span>
+  <span>🥖</span>
+  <span>🎂</span>
+  <span>🍩</span>
+  <span>🍰</span>
+  <span>🥧</span>
+  <span>🍪</span>
+  <span>🥐</span>
+  <span>🥖</span>
+  <span>🎂</span>
+  <span>🍩</span>
+  <span>🍰</span>
+  <span>🥧</span>
+</div>
 
-        <div className="middle"></div>
+<div className="emoji_row">
+  <span>🧁</span>
+  <span>🍪</span>
+  <span>🥖</span>
+  <span>🎂</span>
+  <span>🍩</span>
+  <span>🍰</span>
+  <span>🥧</span>
+  <span>🍪</span>
+  <span>🥐</span>
+  <span>🥖</span>
+  <span>🎂</span>
+  <span>🍩</span>
+  <span>🍰</span>
+  <span>🥧</span>
+</div>
 
-        <Link to="/search" className="recipe_button">
-          Search Recipes
-        </Link>
-      </div>
+</div>
 
-      <div className="button_layout">
-        <Link to="/help" className="recipe_button">
-          Help Me Find a Recipe
-        </Link>
+<div className="daily_recipe"> <h2>Recipe of the Day</h2> <p>Check back soon for today's featured recipe!</p> </div>
 
-        <div className="middle"></div>
+<div className="home_navigation">
 
-        <Link to="/edit-recipes" className="recipe_button">
-          Edit Recipes
-        </Link>
-      </div>
+<Link to="/recipes" className="home_card">
+  <h2>All Recipes</h2>
+  <p>Browse everything in the cookbook</p>
+</Link>
 
-      <div className="substitutes">
-        Most Common Substitutes:
-      </div>
 
-    </div>
-  )
-}
+<Link to="/search" className="home_card">
+  <h2>Search Recipes</h2>
+  <p>Find exactly what you're looking for</p>
+</Link>
+
+
+<Link to="/edit-recipes" className="home_card">
+  <h2>Edit Recipes</h2>
+  <p>Add, edit, or delete recipes</p>
+</Link>
+
+</div>
+
+<div className="substitutes"> <h2>Most Common Substitutes 🥣</h2> <p>Coming soon!</p> </div>
+
+</div>)}
 
 function App() {
   return (

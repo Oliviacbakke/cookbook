@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Search.css";
 
-
 function Search() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
@@ -17,12 +16,10 @@ function Search() {
   const filteredRecipes = recipes.filter((recipe) => {
     const searchText = search.toLowerCase();
 
-    // If nothing is typed, show everything
     if (searchText === "") {
       return true;
     }
 
-    // Search recipe name and instructions
     if (searchType === "keyword") {
       return (
         recipe.name.toLowerCase().includes(searchText) ||
@@ -30,14 +27,12 @@ function Search() {
       );
     }
 
-    // Find recipes INCLUDING an ingredient
     if (searchType === "includes") {
       return recipe.ingredients.some((ingredient) =>
         ingredient.toLowerCase().includes(searchText)
       );
     }
 
-    // Find recipes NOT including an ingredient
     if (searchType === "notIncludes") {
       return !recipe.ingredients.some((ingredient) =>
         ingredient.toLowerCase().includes(searchText)
@@ -109,8 +104,10 @@ function Search() {
       <br />
 
       <Link to="/">
-        <button>Back to Home</button>
+        <button className="back_button"> ← Back to Home</button>
       </Link>
+
+      <br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
   );
 }

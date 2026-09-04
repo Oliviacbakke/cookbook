@@ -1,34 +1,89 @@
-.recipes_header_layout {
-  padding-top: 60px;
+.recipes_page {
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    padding: 40px;
+    color: #36454F;
+}
+
+.recipes_page h1 {
+    font-size: 50px;
+    margin-bottom: 8px;
+    font-family: "Times New Roman", serif;
+}
+
+.recipes_subtitle {
+    font-size: 20px;
+    margin-bottom: 35px;
 }
 
 .column_layout {
-  display: flex; 
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
 }
 
-.mains,
-.sides,
-.desserts {
-  flex: 1;
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
-  color: #36454F;
-  padding-top: 40px; 
-  padding-bottom: 40px; 
+.recipe_category {
+    flex: 1;
+    min-height: 350px;
+    padding: 25px;
+
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
 }
 
-button {
-    padding: 5px; 
-    font-size: 20px; 
+.recipe_category h2 {
+    font-size: 27px;
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
-.recipe-form {
-    font-size: 20px; 
-    
+.recipe_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-textarea {
-    font-size: 20px; 
+.recipe_card {
+    display: block;
+    padding: 14px 18px;
+
+    background: white;
+    border: 2px solid #B76B7D;
+    border-radius: 12px;
+
+    color: #36454F;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.recipe_card {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.empty_message {
+    font-size: 17px;
+    font-style: italic;
+}
+
+.back_button {
+    display: inline-block;
+    padding: 12px 22px;
+
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
+
+    color: #36454F;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.back_button {
+    background: #B76B7D;
+    color: #F2EEE9;
 }
 

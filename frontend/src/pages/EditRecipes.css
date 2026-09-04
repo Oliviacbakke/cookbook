@@ -1,20 +1,218 @@
-.recipe_form {
-  padding: 60px;
-  font-family: "Times New Roman", serif;
-  background-color: #D1E7B3;
-  color: #36454F;
-  font-size: 30px 
-}
-
-h1 {
-    padding: 40px; 
-}
-
-button {
-    font-size: 20px; 
-}
-
-input {
-    font-size: 20px; 
+.edit_page {
+    text-align: center;
     font-family: "Times New Roman", serif;
+    padding: 40px;
+    color: #36454F;
+}
+
+.edit_page h2 {
+    font-size: 50px;
+    margin-bottom: 8px;
+    font-family: "Times New Roman", serif;
+    text-decoration: none; 
+}
+
+.edit_subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.recipe_form {
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
+
+    max-width: 650px;
+    margin: 0 auto;
+
+    padding: 30px;
+    text-align: left;
+}
+
+.form_group {
+    margin-bottom: 25px;
+}
+
+.form_group label,
+.form_group h3 {
+    display: block;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.recipe_form input,
+.recipe_form select,
+.recipe_form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+
+    padding: 12px;
+
+    border: 2px solid #B76B7D;
+    border-radius: 12px;
+
+    background: white;
+}
+
+.recipe_form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.ingredient_row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.remove_ingredient {
+    width: 45px;
+    flex-shrink: 0;
+
+    font-size: 24px;
+
+    border: 2px solid #B76B7D;
+    border-radius: 12px;
+
+    background: white;
+    cursor: pointer;
+}
+
+.remove_ingredient {
+    background: #B76B7D;
+    color: #F2EEE9;
+}
+
+.add_ingredient,
+.save_button,
+.edit_button,
+.delete_button {
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+
+    padding: 10px 18px;
+
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.add_ingredient {
+    background: white;
+    color: #36454F;
+}
+
+.add_ingredient {
+    background: #B76B7D;
+    color: #F2EEE9;
+}
+
+.save_button {
+    width: 100%;
+    font-size: 21px;
+
+    background: #B76B7D;
+    color: #F2EEE9;
+}
+
+.save_button {
+    transform: scale(1.02);
+}
+
+.recipe_divider {
+    width: 80%;
+    max-width: 800px;
+
+    border-top: 2px solid #B76B7D;
+
+    margin: 50px auto;
+}
+
+
+.manage_title {
+    font-size: 50px;
+    margin-bottom: 8px;
+    text-decoration: none; 
+}
+
+.manage_subtitle {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.delete_recipes {
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.delete_recipe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 15px;
+
+    font-size: 20px;
+}
+
+.recipe_actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit_button {
+    background: white;
+    color: #36454F;
+}
+
+.edit_button {
+background: #B76B7D;
+color: #F2EEE9;
+}
+
+.delete_button {
+    background: white;
+    color: #36454F;
+}
+
+.delete_button {
+    background: #B76B7D;
+    color: #F2EEE9;
+}
+
+.empty_message {
+    font-size: 18px;
+    font-style: italic;
+}
+
+.back_button {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
+
+    color: #36454F;
+    font-size: 18px;
+
+    text-decoration: none;
+}
+
+.back_button {
+    background: #B76B7D;
+    color: #F2EEE9;
 }

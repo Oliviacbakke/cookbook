@@ -1,31 +1,31 @@
 .search_page {
-  text-align: center;
-  font-family: "Times New Roman", serif;
-  padding: 40px;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    padding: 40px;
 }
 
 .search_page h1 {
-  color: #36454F;
-  font-size: 38px;
+    color: #36454F;
+    font-size: 38px;
 }
 
 .search_types {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
 }
 
 .search_types button {
-  font-family: "Times New Roman", serif;
-  font-size: 18px;
-  padding: 12px 20px;
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    padding: 12px 20px;
 
-  border: 2px solid #B76B7D;
-  border-radius: 20px;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
 
-  background: #F2EEE9;
-  cursor: pointer;
+    background: #F2EEE9;
+    cursor: pointer;
 }
 
 .search_types button:hover {
@@ -61,20 +61,40 @@
 }
 
 .recipe_result {
-  display: block;
+    display: block;
 
-  padding: 15px 20px;
+    padding: 15px 20px;
 
-  background: #F2EEE9;
-  border: 2px solid #B76B7D;
-  border-radius: 12px;
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 12px;
 
-  color: #36454F;
-  font-size: 20px;
+    color: #36454F;
+    font-size: 20px;
 
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .recipe_result:hover {
   transform: scale(1.02);
+}
+
+.back_button {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
+
+    color: #36454F;
+    font-size: 18px;
+
+    text-decoration: none;
+}
+
+.back_button {
+    background: #B76B7D;
+    color: #F2EEE9;
 }
