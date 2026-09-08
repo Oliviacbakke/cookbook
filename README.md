@@ -49,17 +49,19 @@
     │   └── cookbook.db
     │
     └── README.md
-    How to Run
 
-# Backend
 
-    Navigate to the backend folder: cd backend
-    Start the Flask server: python app.py
-    The backend runs at:http://127.0.0.1:5000
+# How to Run
 
-# Frontend
+    Backend
 
-    In a separate terminal, navigate to the frontend folder: cd frontend
-    Install the dependencies:npm install
-    Start the development server: npm run dev
-    Then open the local URL provided by Vite in your browser.
+        Navigate to the backend folder: cd backend
+        Start the Flask server: python app.py
+        The backend runs at:http://127.0.0.1:5000
+
+    Frontend
+
+        In a separate terminal, navigate to the frontend folder: cd frontend
+        Install the dependencies:npm install
+        Start the development server: npm run dev
+        Then open the local URL provided by Vite in your browser.
