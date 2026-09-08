@@ -14,9 +14,9 @@ fetch("http://127.0.0.1:5000/recipes")
 return (
 <div className="recipes_page">
 
-  <h1>All Recipes 🍰</h1>
+  <h1>All Recipes</h1>
   <p className="recipes_subtitle">
-    Browse all of my favorite recipes!
+    Browse all of the recipes!
   </p>
 
   <div className="column_layout">

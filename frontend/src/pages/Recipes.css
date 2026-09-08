@@ -2,12 +2,11 @@
     text-align: center;
     font-family: "Times New Roman", serif;
     padding: 40px;
-    color: #36454F;
 }
 
 .recipes_page h1 {
     font-size: 50px;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     font-family: "Times New Roman", serif;
 }
 
@@ -38,6 +37,7 @@
     font-size: 27px;
     margin-top: 0;
     margin-bottom: 25px;
+    font-family: "Times New Roman", serif;
 }
 
 .recipe_list {

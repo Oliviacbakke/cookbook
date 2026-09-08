@@ -44,70 +44,74 @@ function Search() {
 
   return (
     <div className="search_page">
-  <h1>Search Recipes 🔎</h1>
+      <h1>Search Recipes</h1>
 
-  <div className="search_types">
+      <p className="search_subtitle">Use a keyword, an ingredient, or a lack thereof!</p>
 
-    <button
-      className={searchType === "keyword" ? "active_search" : ""}
-      onClick={() => setSearchType("keyword")}
-    >
-      Keyword
-    </button>
+      <div className="search_types">
 
-    <button
-      className={searchType === "includes" ? "active_search" : ""}
-      onClick={() => setSearchType("includes")}
-    >
-      Has Ingredient
-    </button>
+        <button
+          className={searchType === "keyword" ? "active_search" : ""}
+          onClick={() => setSearchType("keyword")}
+        >
+          Keyword
+        </button>
 
-    <button
-      className={searchType === "notIncludes" ? "active_search" : ""}
-      onClick={() => setSearchType("notIncludes")}
-    >
-      No Ingredient
-    </button>
+        <button
+          className={searchType === "includes" ? "active_search" : ""}
+          onClick={() => setSearchType("includes")}
+        >
+          Has Ingredient
+        </button>
 
-  </div>
+        <button
+          className={searchType === "notIncludes" ? "active_search" : ""}
+          onClick={() => setSearchType("notIncludes")}
+        >
+          No Ingredient
+        </button>
 
-  <input
-    className="search_input"
-    type="text"
-    placeholder={
-      searchType === "keyword"
-        ? "Search recipes..."
-        : "Enter an ingredient..."
-    }
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-  />
-
-  <h2>Results</h2>
-
-      <div className="search_results">
-        {filteredRecipes.length === 0 ? (
-          <p>No recipes found</p>
-        ) : (
-          filteredRecipes.map((recipe) => (
-            <Link
-              key={recipe.id}
-              to={`/recipes/one-recipe/${recipe.id}`}
-              className="recipe_result"
-            >
-              {recipe.name}
-            </Link>
-          ))
-        )}
       </div>
 
-      <br />
+      <input
+        className="search_input"
+        type="text"
+        placeholder={
+          searchType === "keyword"
+            ? "Search recipes..."
+            : "Enter an ingredient..."
+        }
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
-      <Link to="/">
-        <button className="back_button"> ← Back to Home</button>
-      </Link>
+      <h2>Results</h2>
 
-      <br></br><br></br><br></br><br></br><br></br><br></br>
+      <p className="result_subtitle">Here's what was found!</p>
+
+        <div className="search_results">
+          {filteredRecipes.length === 0 ? (
+            <p>No recipes found</p>
+          ) : (
+            filteredRecipes.map((recipe) => (
+              <Link
+                key={recipe.id}
+                to={`/recipes/one-recipe/${recipe.id}`}
+                className="recipe_result"
+              >
+                {recipe.name}
+              </Link>
+            ))
+          )}
+        </div>
+
+        <br />
+
+        <Link to="/">
+          <button className="back_button"> ← Back to Home</button>
+        </Link>
+
+          <br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
   );
 }

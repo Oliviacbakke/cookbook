@@ -5,8 +5,19 @@
 }
 
 .search_page h1 {
-    color: #36454F;
-    font-size: 38px;
+    font-size: 50px;
+    font-family: "Times New Roman", serif;
+}
+
+.search_page h2 {
+    font-size: 50px;
+    font-family: "Times New Roman", serif;
+    padding-top: 30px;
+}
+
+.search_subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .search_types {
@@ -58,6 +69,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.result_subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .recipe_result {

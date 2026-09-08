@@ -33,7 +33,6 @@ setIngredients(newIngredients);
 function removeIngredient(index) {
 const newIngredients = ingredients.filter((_, i) => i !== index);
 
-// Keep at least one ingredient box visible
 if (newIngredients.length === 0) {
   setIngredients([""]);
 } else {
@@ -134,8 +133,8 @@ return (
 
   <p className="edit_subtitle">
     {editingId !== null
-      ? "Make changes to your recipe below!"
-      : "Add a new favorite recipe to your cookbook!"}
+      ? "Make changes to the recipes below"
+      : "Add a new favorite recipe to the cookbook!"}
   </p>
 
   <div className="recipe_form">
@@ -229,7 +228,7 @@ return (
   <h2 className="manage_title">Manage Recipes</h2>
 
   <p className="manage_subtitle">
-    Edit or delete recipes from your cookbook.
+    Edit or delete recipes from the cookbook
   </p>
 
 

@@ -2,7 +2,6 @@
     text-align: center;
     font-family: "Times New Roman", serif;
     padding: 40px;
-    color: #36454F;
 }
 
 .edit_page h2 {
@@ -103,7 +102,6 @@
 
 .add_ingredient {
     background: white;
-    color: #36454F;
 }
 
 .add_ingredient {
@@ -173,18 +171,12 @@
 }
 
 .edit_button {
-    background: white;
-    color: #36454F;
-}
-
-.edit_button {
-background: #B76B7D;
-color: #F2EEE9;
+    background: #B76B7D;
+    color: #F2EEE9;
 }
 
 .delete_button {
     background: white;
-    color: #36454F;
 }
 
 .delete_button {

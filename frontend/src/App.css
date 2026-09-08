@@ -43,7 +43,7 @@ body {
   margin: 0;
   font-family: "Times New Roman", Times, serif;
   font-size: 65px;
-  color: #36454F;
+  padding-bottom: 20px; 
 }
 
 .header_text p {
@@ -86,79 +86,96 @@ body {
 }
 
 .daily_recipe {
-max-width: 650px;
-margin: 0 auto 40px;
-padding: 25px;
-background: #F2EEE9;
-border: 2px solid #B76B7D;
-border-radius: 20px;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  padding: 25px;
+  background: #F2EEE9;
+  border: 2px solid #B76B7D;
+  border-radius: 20px;
+}
+
+.daily_recipe_link {
+  color: black;
+  text-decoration: none;
+  font-size: 35px; 
+  font-family: "Times New Roman", Times, serif;
 }
 
 .daily_recipe h2 {
-margin-top: 0;
-font-size: 35px;
+  margin-top: 0;
+  font-size: 35px;
+  font-family: "Times New Roman", serif;
+  padding-bottom: 20px; 
 }
 
 .daily_recipe p {
-margin-bottom: 0;
-font-size: 18px;
+  margin-bottom: 0;
+  font-size: 18px;
 }
 
 .home_navigation {
-max-width: 1000px;
-margin: 0 auto 50px;
-display: flex;
-justify-content: center;
-gap: 25px;
-padding: 0 30px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 0 30px;
 }
 
 .home_card {
-flex: 1;
-min-height: 220px;
-padding: 25px;
+  flex: 1;
+  min-height: 220px;
+  padding: 25px;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-background: #F2EEE9;
-border: 2px solid #B76B7D;
-border-radius: 20px;
+  background: #F2EEE9;
+  border: 2px solid #B76B7D;
+  border-radius: 20px;
 
-color: #36454F;
-text-decoration: none; 
+  text-decoration: none; 
 }
 
 .home_card {
-transform: scale(1.04);
-background: #B76B7D;
-color: #F2EEE9;
+  transform: scale(1.04);
+  background: #B76B7D;
+  color: #F2EEE9;
+  font-family: "Times New Roman", serif;
 }
 
 .card_emoji {
-font-size: 45px;
+  font-size: 45px;
 }
 
 .home_card h2 {
-margin: 10px 0;
-font-size: 35px;
-color: #F2EEE9;
-text-decoration: none; 
+  margin: 10px 0;
+  font-size: 35px;
+  color: #F2EEE9;
+  text-decoration: none; 
+  font-family: "Times New Roman", serif;
 }
 
 .home_card p {
-margin: 0;
-font-size: 17px;
+  margin: 0;
+  font-size: 17px;
 }
 
 .substitutes {
-max-width: 650px;
-margin: 0 auto;
-padding: 25px;
+  font-family: "Times New Roman", serif;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 25px;
 
-background: #F2EEE9;
-border: 2px solid #B76B7D;
-border-radius: 20px;
+  background: #F2EEE9;
+  border: 2px solid #B76B7D;
+  border-radius: 20px;
+}
+
+.substitutes h2 {
+  margin-top: 0;
+  font-size: 35px;
+  font-family: "Times New Roman", serif;
 }

@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_cors import CORS
 import sqlite3
+from datetime import date
 
 app = Flask(__name__)
 CORS(app)
@@ -138,6 +139,23 @@ def update_recipe(recipe_id):
     connection.commit()
     connection.close()
     return {"message": "Recipe updated successfully"}
+
+@app.route("/recipe-of-the-day", methods=["GET"])
+def recipe_of_the_day():
+    connection = get_db()
+    recipes = connection.execute("""
+        SELECT * FROM recipes
+        ORDER BY id
+    """).fetchall()
+    connection.close()
+    if len(recipes) == 0:
+        return {"error": "No recipes found"}, 404
+    recipe_index = date.today().toordinal() % len(recipes)
+    recipe = recipes[recipe_index]
+    return {
+        "id": recipe["id"],
+        "name": recipe["name"],
+        "category": recipe["category"]}
 
 @app.route("/")
 def home():
