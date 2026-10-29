@@ -8,6 +8,14 @@ import OneRecipe from "./pages/OneRecipe";
 import EditRecipes from "./pages/EditRecipes";
 import SearchRecipes from "./pages/Search";
 
+import { API } from "./config";
+
+  useEffect(() => {
+    fetch(`${API}/recipe-of-the-day`)
+      .then((response) => response.json())
+      .then((data) => setDailyRecipe(data));
+  }, []);
+
 function Home() {
   const [count, setCount] = useState(0)
   const [dailyRecipe, setDailyRecipe] = useState(null);
