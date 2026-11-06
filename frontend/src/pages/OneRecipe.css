@@ -2,9 +2,9 @@
   min-height: 100vh;
   padding: 60px;
 
-  background-color: #D1E7B3;
+  background-color: #F7EDE0;
 
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Lora", Georgia, serif;
   box-sizing: border-box;
 }
 
@@ -12,7 +12,7 @@
   text-align: center;
   font-size: 48px;
   margin: 0 0 50px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Lora", Georgia, serif;
 }
 
 .recipe_page h2 {
@@ -20,7 +20,7 @@
   margin-top: 35px;
   margin-bottom: 20px;
 
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Lora", Georgia, serif;
 }
 
 .recipe_subtitle {
@@ -29,9 +29,9 @@
 }
 
 .ingredients_list {
-  background-color: #F2EEE9;
+  background-color: #FFF9F0;
 
-  border: 3px solid #B76B7D;
+  border: 3px solid #B85C38;
   border-radius: 10px;
 
   padding: 25px;
@@ -45,8 +45,8 @@
 }
 
 .text {
-  background-color: #F2EEE9;
-  border: 3px solid #B76B7D;
+  background-color: #FFF9F0;
+  border: 3px solid #B85C38;
   border-radius: 10px;
   padding: 15px;
   margin: 0 auto 30px;
@@ -74,17 +74,47 @@
 
     padding: 12px 22px;
 
-    background: #F2EEE9;
-    border: 2px solid #B76B7D;
+    background: #FFF9F0;
+    border: 2px solid #B85C38;
     border-radius: 20px;
 
-    color: #36454F;
+    color: #4A3426;
     font-size: 18px;
 
     text-decoration: none;
 }
 
 .back_button {
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
+}
+/* ---------- Mobile / app polish ---------- */
+.recipe_page {
+  min-height: 100dvh;
+}
+
+.back_button {
+  min-height: 44px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .recipe_page {
+    padding: 30px 16px;
+  }
+
+  .recipe_page h1 {
+    font-size: 34px;
+    margin-bottom: 30px;
+    overflow-wrap: anywhere;
+  }
+
+  .ingredients_list {
+    font-size: 19px;
+    padding: 18px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
 }

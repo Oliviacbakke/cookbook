@@ -1,13 +1,13 @@
 .edit_page {
     text-align: center;
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
     padding: 40px;
 }
 
 .edit_page h2 {
     font-size: 50px;
     margin-bottom: 8px;
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
     text-decoration: none; 
 }
 
@@ -17,8 +17,8 @@
 }
 
 .recipe_form {
-    background: #F2EEE9;
-    border: 2px solid #B76B7D;
+    background: #FFF9F0;
+    border: 2px solid #B85C38;
     border-radius: 20px;
 
     max-width: 650px;
@@ -45,12 +45,12 @@
     width: 100%;
     box-sizing: border-box;
 
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
     font-size: 18px;
 
     padding: 12px;
 
-    border: 2px solid #B76B7D;
+    border: 2px solid #B85C38;
     border-radius: 12px;
 
     background: white;
@@ -73,7 +73,7 @@
 
     font-size: 24px;
 
-    border: 2px solid #B76B7D;
+    border: 2px solid #B85C38;
     border-radius: 12px;
 
     background: white;
@@ -81,20 +81,20 @@
 }
 
 .remove_ingredient {
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
 }
 
 .add_ingredient,
 .save_button,
 .edit_button,
 .delete_button {
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
     font-size: 18px;
 
     padding: 10px 18px;
 
-    border: 2px solid #B76B7D;
+    border: 2px solid #B85C38;
     border-radius: 20px;
 
     cursor: pointer;
@@ -105,16 +105,16 @@
 }
 
 .add_ingredient {
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
 }
 
 .save_button {
     width: 100%;
     font-size: 21px;
 
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
 }
 
 .save_button {
@@ -125,7 +125,7 @@
     width: 80%;
     max-width: 800px;
 
-    border-top: 2px solid #B76B7D;
+    border-top: 2px solid #B85C38;
 
     margin: 50px auto;
 }
@@ -158,8 +158,8 @@
 
     padding: 15px 20px;
 
-    background: #F2EEE9;
-    border: 2px solid #B76B7D;
+    background: #FFF9F0;
+    border: 2px solid #B85C38;
     border-radius: 15px;
 
     font-size: 20px;
@@ -171,8 +171,8 @@
 }
 
 .edit_button {
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
 }
 
 .delete_button {
@@ -180,8 +180,8 @@
 }
 
 .delete_button {
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
 }
 
 .empty_message {
@@ -194,17 +194,95 @@
 
     padding: 12px 22px;
 
-    background: #F2EEE9;
-    border: 2px solid #B76B7D;
+    background: #FFF9F0;
+    border: 2px solid #B85C38;
     border-radius: 20px;
 
-    color: #36454F;
+    color: #4A3426;
     font-size: 18px;
 
     text-decoration: none;
 }
 
 .back_button {
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
+}
+/* ---------- Mobile / app polish ---------- */
+.remove_ingredient {
+  min-height: 44px;
+}
+
+.add_ingredient,
+.save_button,
+.edit_button,
+.delete_button,
+.back_button {
+  min-height: 44px;
+}
+
+.cancel_button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  font-family: "Lora", Georgia, serif;
+  font-size: 18px;
+  background: white;
+  color: #4A3426;
+  border: 2px solid #B85C38;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .edit_page {
+    padding: 20px 16px;
+  }
+
+  .edit_page h2,
+  .manage_title {
+    font-size: 34px;
+  }
+
+  .edit_subtitle {
+    font-size: 17px;
+  }
+
+  .recipe_form {
+    padding: 20px;
+  }
+
+  .delete_recipe {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 19px;
+    overflow-wrap: anywhere;
+  }
+
+  .recipe_actions {
+    width: 100%;
+  }
+
+  .recipe_actions button {
+    flex: 1;
+  }
+}
+
+.manage_search {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 25px;
+  box-sizing: border-box;
+
+  padding: 14px;
+  font-size: 18px;
+  font-family: "Lora", Georgia, serif;
+
+  border: 2px solid #B85C38;
+  border-radius: 20px;
+  background: white;
+  outline: none;
 }

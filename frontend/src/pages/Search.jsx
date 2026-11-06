@@ -1,44 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Search.css";
+import { useApi } from "../api";
+import LoadState from "../components/LoadState";
 
 function Search() {
-  const [recipes, setRecipes] = useState([]);
+  const { data, error, loading, reload } = useApi("/recipes");
+  const recipes = data || [];
   const [search, setSearch] = useState("");
   const [searchType, setSearchType] = useState("keyword");
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:5000/recipes")
-      .then((response) => response.json())
-      .then((data) => setRecipes(data));
-  }, []);
+  const searchText = search.trim().toLowerCase();
 
   const filteredRecipes = recipes.filter((recipe) => {
-    const searchText = search.toLowerCase();
+    if (searchText === "") return true;
 
-    if (searchText === "") {
-      return true;
-    }
+    const hasIngredient = (recipe.ingredients || []).some((ingredient) =>
+      ingredient.toLowerCase().includes(searchText)
+    );
 
     if (searchType === "keyword") {
       return (
-        recipe.name.toLowerCase().includes(searchText) ||
-        recipe.instructions.toLowerCase().includes(searchText)
+        (recipe.name || "").toLowerCase().includes(searchText) ||
+        (recipe.instructions || "").toLowerCase().includes(searchText)
       );
     }
-
-    if (searchType === "includes") {
-      return recipe.ingredients.some((ingredient) =>
-        ingredient.toLowerCase().includes(searchText)
-      );
-    }
-
-    if (searchType === "notIncludes") {
-      return !recipe.ingredients.some((ingredient) =>
-        ingredient.toLowerCase().includes(searchText)
-      );
-    }
-
+    if (searchType === "includes") return hasIngredient;
+    if (searchType === "notIncludes") return !hasIngredient;
     return true;
   });
 
@@ -49,7 +37,6 @@ function Search() {
       <p className="search_subtitle">Use a keyword, an ingredient, or a lack thereof!</p>
 
       <div className="search_types">
-
         <button
           className={searchType === "keyword" ? "active_search" : ""}
           onClick={() => setSearchType("keyword")}
@@ -70,17 +57,15 @@ function Search() {
         >
           No Ingredient
         </button>
-
       </div>
 
       <input
         className="search_input"
-        type="text"
-        placeholder={
-          searchType === "keyword"
-            ? "Search recipes..."
-            : "Enter an ingredient..."
-        }
+        type="search"
+        enterKeyHint="search"
+        autoCapitalize="none"
+        autoCorrect="off"
+        placeholder={searchType === "keyword" ? "Search recipes..." : "Enter an ingredient..."}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -89,6 +74,9 @@ function Search() {
 
       <p className="result_subtitle">Here's what was found!</p>
 
+      <LoadState loading={loading} error={error} onRetry={reload} />
+
+      {!loading && !error && (
         <div className="search_results">
           {filteredRecipes.length === 0 ? (
             <p>No recipes found</p>
@@ -104,14 +92,11 @@ function Search() {
             ))
           )}
         </div>
+      )}
 
-        <br />
+      <br />
 
-        <Link to="/">
-          <button className="back_button"> ← Back to Home</button>
-        </Link>
-
-          <br></br><br></br><br></br><br></br><br></br><br></br>
+      <div style={{ height: 80 }} />
     </div>
   );
 }

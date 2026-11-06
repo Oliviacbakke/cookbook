@@ -1,0 +1,148 @@
+.recipes_page {
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    padding: 40px;
+}
+
+.recipes_page h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: "Times New Roman", serif;
+}
+
+.recipes_subtitle {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.column_layout {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.recipe_category {
+    flex: 1;
+    min-height: 350px;
+    padding: 25px;
+
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
+}
+
+.recipe_category h2 {
+    font-size: 27px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: "Times New Roman", serif;
+}
+
+.recipe_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.recipe_card {
+    display: block;
+    padding: 14px 18px;
+
+    background: white;
+    border: 2px solid #B76B7D;
+    border-radius: 12px;
+
+    color: #36454F;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.recipe_card {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.empty_message {
+    font-size: 17px;
+    font-style: italic;
+}
+
+.back_button {
+    display: inline-block;
+    padding: 12px 22px;
+
+    background: #F2EEE9;
+    border: 2px solid #B76B7D;
+    border-radius: 20px;
+
+    color: #36454F;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.back_button {
+    background: #B76B7D;
+    color: #F2EEE9;
+}
+
+@media (max-width: 700px) {
+  .column_layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    grid-template-columns: 1fr;   /* in case your layout uses grid */
+  }
+
+  .recipe_category {
+    width: 100%;
+  }
+
+  .recipes_page {
+    padding: 20px 16px;
+  }
+
+  .recipes_page h1 {
+    font-size: 34px;
+  }
+
+  .recipe_card {
+    font-size: 18px;
+    overflow-wrap: anywhere;   /* long recipe names wrap instead of overflowing */
+  }
+}
+.recipe_card {
+  min-height: 44px;
+}
+
+.back_button {
+  min-height: 44px;
+}
+
+.category_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.category_button {
+  display: block;
+  padding: 40px 20px;
+  background: #B76B7D;
+  color: #F2EEE9;
+  border: 2px solid #B76B7D;
+  border-radius: 20px;
+  font-family: "Times New Roman", serif;
+  font-size: 32px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.single_category {
+  flex: none;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}

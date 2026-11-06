@@ -1,17 +1,17 @@
 .search_page {
     text-align: center;
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
     padding: 40px;
 }
 
 .search_page h1 {
     font-size: 50px;
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
 }
 
 .search_page h2 {
     font-size: 50px;
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
     padding-top: 30px;
 }
 
@@ -23,19 +23,20 @@
 .search_types {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;          
     gap: 15px;
     margin: 25px 0;
 }
 
 .search_types button {
-    font-family: "Times New Roman", serif;
+    font-family: "Lora", Georgia, serif;
     font-size: 18px;
     padding: 12px 20px;
 
-    border: 2px solid #B76B7D;
+    border: 2px solid #B85C38;
     border-radius: 20px;
 
-    background: #F2EEE9;
+    background: #FFF9F0;
     cursor: pointer;
 }
 
@@ -44,19 +45,19 @@
 }
 
 .active_search {
-  background: #B76B7D !important;
-  color: #F2EEE9;
+  background: #B85C38 !important;
+  color: #FFF9F0;
 }
 
 .search_input {
-  width: 60%;
+  width: 100%;
   max-width: 500px;
 
   padding: 14px;
   font-size: 18px;
-  font-family: "Times New Roman", serif;
+  font-family: "Lora", Georgia, serif;
 
-  border: 2px solid #B76B7D;
+  border: 2px solid #B85C38;
   border-radius: 20px;
 
   outline: none;
@@ -81,11 +82,11 @@
 
     padding: 15px 20px;
 
-    background: #F2EEE9;
-    border: 2px solid #B76B7D;
+    background: #FFF9F0;
+    border: 2px solid #B85C38;
     border-radius: 12px;
 
-    color: #36454F;
+    color: #4A3426;
     font-size: 20px;
 
     text-decoration: none;
@@ -100,17 +101,43 @@
 
     padding: 12px 22px;
 
-    background: #F2EEE9;
-    border: 2px solid #B76B7D;
+    background: #FFF9F0;
+    border: 2px solid #B85C38;
     border-radius: 20px;
 
-    color: #36454F;
+    color: #4A3426;
     font-size: 18px;
 
     text-decoration: none;
 }
 
 .back_button {
-    background: #B76B7D;
-    color: #F2EEE9;
+    background: #B85C38;
+    color: #FFF9F0;
+}
+
+@media (max-width: 600px) {
+  .search_page {
+    padding: 20px 16px;
+  }
+
+  .search_page h1,
+  .search_page h2 {
+    font-size: 34px;
+  }
+
+  .search_subtitle,
+  .result_subtitle {
+    font-size: 17px;
+  }
+
+  .search_types button {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .recipe_result {
+    font-size: 18px;
+    overflow-wrap: anywhere; 
+  }
 }
